@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neuweather - Plan Your Days</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400&family=Playfair+Display:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="app.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container container__header">
+      <header class="title">
+        <div class="title__mask--left"></div>
+        <h1 class="display">Neu<br />wea<br />ther</h1>
+        <div class="title__mask--right"></div>
+      </header>
+      <section class="content__header">
+        <div class="content__title">
+          <h2>Current weather and three day forecast</h2>
+        </div>
+        <div class="content__body">
+          <p>
+            Search for your city below to see what the weather has is store for
+            you today, presented in a beautiful and minimalist style to help you
+            focus on what matters to you.
+          </p>
+        </div>
+        <div class="content__search">
+          <button class="content__search--button">
+            Check your location now
+            <img src="assets/gala_search.svg" alt="search button icon" />
+          </button>
+        </div>
+      </section>
+    </div>
+    <div class="container container__data">
+      <section class="content__data hidden" id="forecast">
+        <nav class="content__nav">
+          <div class="content__nav--logo">Neuweather</div>
+          <div class="content__nav--location"></div>
+        </nav>
+        <div class="content__data--display title">
+          <div class="title__mask--left"></div>
+          <h1 class="data__curent"></h1>
+        </div>
+        <div class="content__data--forecast">
+          <div class="forecast__card">
+            <div class="forecast__card--title">tomorrow</div>
+            <div class="forecast__card--data" id="tomorrow"></div>
+          </div>
+          <div class="forecast__card">
+            <div class="forecast__card--title">next day</div>
+            <div class="forecast__card--data" id="nextDay"></div>
+          </div>
+          <div class="forecast__card">
+            <div class="forecast__card--title">day after</div>
+            <div class="forecast__card--data" id="dayAfter"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
