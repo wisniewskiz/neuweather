@@ -1,5 +1,6 @@
 //DOM ELEMENTS
 const searchButton = document.querySelector(".content__search--button");
+const searchLoading = document.querySelector(".content__search--loading");
 const dataContent = document.querySelector(".content__data");
 const dataCurrent = document.querySelector(".data__curent");
 const tomorrow = document.getElementById("tomorrow");
@@ -11,6 +12,7 @@ const cityName = document.querySelector(".content__nav--location");
 const getCity = async () => {
   const weatherKey = "02e3d905bbc55cace1cc3c8910360fbe";
   let weatherForecast = new Object();
+  searchLoading.classList.toggle("hidden");
 
   const getCoords = await new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -49,8 +51,8 @@ const getCity = async () => {
 
 //DISPLAY DATA
 const observer = new MutationObserver((mutations) => {
-  console.log(mutations);
   dataContent.classList.toggle("hidden");
+  searchLoading.classList.toggle("hidden");
   dataContent.scrollIntoView({ behavior: "smooth" });
 });
 
@@ -60,5 +62,8 @@ observer.observe(dataCurrent, {
 // FUNCTIONS
 searchButton.addEventListener("click", async () => {
   getCity();
-  //   showData();
+});
+
+searchLoading.addEventListener("click", () => {
+  console.log("you found me");
 });
