@@ -11,7 +11,11 @@
 h1 {
   color: #282624;
   font-family: Playfair Display, serif;
-  font-size: 17.55344rem;
+  font-size: clamp(
+    7.75rem,
+    4.108737142857143rem + 14.938514285714286vw,
+    17.5534rem
+  );
   font-style: normal;
   font-weight: 500;
   line-height: 93.3%; /* 16.37731rem */
@@ -30,7 +34,7 @@ h2 {
   color: #282624;
 
   font-family: Playfair Display, serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.6285714285714286rem + 1.5238095238095237vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: 93.3%; /* 2.799rem */
@@ -51,7 +55,7 @@ p {
   color: #282624;
 
   font-family: Playfair Display;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 0.9428571428571428rem + 2.2857142857142856vw, 3rem);
   font-style: normal;
   font-weight: 500;
   line-height: 82.8%; /* 2.484rem */
@@ -62,7 +66,7 @@ p {
 .forecast__card--data {
   color: #282624;
   font-family: Playfair Display;
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 0.9428571428571428rem + 2.2857142857142856vw, 3rem);
   font-style: normal;
   font-weight: 400;
   line-height: 82.8%; /* 2.484rem */
@@ -72,7 +76,7 @@ p {
 nav {
   color: #282828;
   font-family: Playfair Display;
-  font-size: 2rem;
+  font-size: clamp(1rem, 0.6285714285714286rem + 1.5238095238095237vw, 2rem);
   font-style: normal;
   font-weight: 500;
   line-height: 82.8%; /* 1.656rem */
@@ -209,4 +213,69 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+}
+
+/* --------------- */
+/* -------------- */
+/* MEDIA QUERIES */
+/* -------------*/
+/* ----------- */
+
+@media screen and (max-width: 1290px) {
+  nav {
+    padding: 0px 1rem;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .container {
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+
+  .title {
+    justify-content: flex-start;
+  }
+
+  .title__mask--right {
+    display: none;
+  }
+
+  .content__header {
+    padding: 0 9.25rem;
+  }
+
+  .content__search {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .container {
+    padding: 1rem 1rem;
+  }
+
+  .container__header {
+    margin-top: 8.72rem;
+  }
+
+  .title__mask--left {
+    display: none;
+  }
+
+  .content__header {
+    padding: 0;
+  }
+  .content__data--forecast {
+    flex-direction: column;
+  }
+
+  .forecast__card {
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    flex-shrink: 0;
+    height: auto;
+    gap: 1rem;
+  }
 }
